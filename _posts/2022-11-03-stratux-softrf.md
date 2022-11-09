@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Stratux SoftRF configuration
-subtitle: HowTo: Configure your SoftRF device for Stratux using the SoftRF specific version for Stratux
+subtitle: Configure your SoftRF device for Stratux using the SoftRF specific version for Stratux
 gh-repo: rvt/SoftRF
 _gh-badge: [star, fork, follow]
 tags: [Stratux, SoftRF]

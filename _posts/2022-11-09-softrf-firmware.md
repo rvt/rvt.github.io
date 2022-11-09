@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Stratux SoftRF Firmware Installation
-subtitle: HowTo: Update your T-Beam with the latest version of SoftRF-Stratux
+subtitle: Update your T-Beam with the latest version of SoftRF-Stratux
 gh-repo: rvt/SoftRF
 _gh-badge: [star, fork, follow]
 tags: [Stratux, SoftRF]
