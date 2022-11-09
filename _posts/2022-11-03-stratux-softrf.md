@@ -1,36 +1,38 @@
 ---
 layout: post
-title: Stratux SoftRF Firmware
-subtitle: HowTo: Update your T-Beam with the latest version of SoftRF-Stratux
+title: Stratux SoftRF configuration
+subtitle: HowTo: Configure your SoftRF device for Stratux using the SoftRF specific version for Stratux
 gh-repo: rvt/SoftRF
 _gh-badge: [star, fork, follow]
 tags: [Stratux, SoftRF]
 comments: false
 ---
 
-HowTo: Update your T-Beam with the latest version of SoftRF-Stratux
+Configuring your Soft-RF Device in case you connect SoftRF over BT
 
-To add the latest firmware of SoftRF on your T-Beam you can use the Stratux cli to add the firmware.
-However, before you do this you need to configure Stratux to connect to your local LAN using wifi,
-or you can use a ethernet cable to connect Stratux to the internet. Look for the documentation on
-[b3nn0/stratux/wiki](https://github.com/b3nn0/stratux/wiki) for the information, for WIFI it's the settings as follows
+**How to configure SoftRF for Stratux**
 
-![Stratux WIFI](/assets/blogimg/stratux-wifi.jpg)
+When you use the modified version of SoftRF for Stratux as found [github.com/rvt/SoftRF](https://github.com/rvt/SoftRF), Stratux
+will take care of the configuration using the correct Aircraft ID. However, when Stratux is not beable to modify the Aircraft ID
+of your SoftRF device, for example when you connect over wireless there are two options to configure:
 
-After that you can login into stratux as described here: [SSH-into-Stratux](https://github.com/cyoung/stratux/wiki/SSH-into-Stratux)
+### 1) Connect over USB/Serial on Stratux ### 
 
-Go to the directory `cd /opt/stratux/SoftRF/` and execute `./install-SoftRF-Stratux-firmware.sh`,
-follow the questions and the script will download the latest version of SoftRF for Stratux and install it on your T-Beam.
+When you are not sure how to configure use a terminal and/or send commands to your SoftRF device, you can also for a *one-time*
+connect SoftRF over USB/Serial. Like a T-Beam for example and boot up stratux with the correct Aircraft ID.
+Wait a few minutes, SoftRF will reboot when it received a new configuration from Stratux.
+After the reboot and you see the correct ID you can disconnect and reconnect over wireless again.
 
-![Install SoftRF on T-Beam](/assets/blogimg/install-softrf-on-t-beam.jpg)
+### 2) Connect over USB/Serial PC ### 
 
-On the status screen of Stratux Initially the hardware is going to show up as `USB Serial IN (NMEA protocol)` but after a few minutes it will
-be discovered as a SoftRF-Dongle.
+If you cannot connect the device to Stratux, you can also connect the device to your PC/Mac. I assume you know how to do this so
+I won't device to deep in it, I use Arduino. This is also a *one-time* setup.
 
-![SoftRF Stratux Dongle](/assets/blogimg/SoftRF-Stratux-Dongle)
+Use the following link to generate an *$PSRFC* string: [basic.html](/basic.html). Use
+the generate *$PSRFC* string and copy/paste it into the device. Here is an example how that might look like:
 
-Note: The SoftRF version for stratux is the same as the version of Linar with some additions for stratux but
-it will behave exactly the same as before. 
+![SoftRF Config](/assets/blogimg/SoftRF-PSRFC.jpg)
 
 - For explanation of all the settings go here: [SoftRF/wiki/Settings](https://github.com/lyusupov/SoftRF/wiki/Settings)
 - For any questions you can find us here : [gitter.im/SoftRF-open/community](https://gitter.im/SoftRF-open/community)
+
